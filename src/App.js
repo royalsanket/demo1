@@ -10,10 +10,16 @@ const App = () =>{
     setinputList(event.target.value)
   }
 
-  const listOfItems = () =>{
-    setitems( (olditems) => {
-      return [...olditems , inputList];
-    } )
+ const listOfItems = () =>{
+    if(inputList.length == 0){
+      alert("Something went wrong");
+    }
+    else{
+      setitems( (olditems) => {
+        return [...olditems , inputList];
+      } )
+    }
+   
 
     setinputList("");
   }
